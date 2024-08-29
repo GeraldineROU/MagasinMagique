@@ -192,4 +192,23 @@ class MagasinTest {
 //        assertEquals(7, app.items[0].sellIn);
 //        assertEquals(50, app.items[0].quality);
 //    }
+
+    ///////////////////////////////////////////////////////////////
+
+    @ParameterizedTest
+    @CsvSource({
+            "Pouvoirs magiques, 8, 10, 7, 8", //SellIn -1 , quality -2
+            "Pouvoirs magiques, 0, 10, -1, 6", //SellIn -1 , quality -4
+            "Pouvoirs magiques, 0, 2, -1, 0", //SellIn -1 , quality ne peut pas être négative
+    })
+
+    void testPouvoirsMagique(String name, int initialSellIn, int initialQuality, int expectedSellIn, int expectedQuality) {
+        Item[] items = new Item[] {new Item(name, initialSellIn, initialQuality)};
+        Magasin app = new Magasin(items);
+        app.updateQuality();
+        assertEquals(name, app.items[0].name);
+        assertEquals(expectedSellIn, app.items[0].sellIn);
+        assertEquals(expectedQuality, app.items[0].quality);
+    }
+
 }

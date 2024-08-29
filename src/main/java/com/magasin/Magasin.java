@@ -12,7 +12,7 @@ class Magasin {
 
             //si item normal
             if (!items[i].name.equals("Comté")
-                    && !items[i].name.equals("Pass VIP Concert")) {
+                    && !items[i].name.equals("Pass VIP Concert") && !items[i].name.equals("Pouvoirs magiques")) {
                 if (items[i].quality > 0) {
                     if (!items[i].name.equals("Kryptonite")) {
                             items[i].quality = items[i].quality - 1;
