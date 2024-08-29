@@ -98,6 +98,12 @@ class MagasinTest {
             "Standard Item,0,0,Standard Item,-1,0",
             "Comté,0,50,Comté,-1,50",
             "Pass VIP Concert,0,0,Pass VIP Concert,-1,0",
+            "Pouvoirs magiques,10,20,Pouvoirs magiques,9,18",
+            "Pouvoirs magiques,0,10,Pouvoirs magiques,-1,6",
+            "Pouvoirs magiques,-1,10,Pouvoirs magiques,-2,6",
+            "Pouvoirs magiques,5,0,Pouvoirs magiques,4,0",
+            "Pouvoirs magiques,5,1,Pouvoirs magiques,4,0",
+            "Pouvoirs magiques,5,50,Pouvoirs magiques,4,48",
     })
 
     void csvSourcedInCodeTest(String name, Integer sellIn, Integer quality, String expectedName, Integer expectedSellIn, Integer expectedQuality) {

@@ -22,6 +22,34 @@ class Magasin {
                 }
             }
 
+
+
+            if (isPouvoirMagique(i)) {
+                if (items[i].quality > 0 && !isPassed(i)) {
+                    qualityMinusOne(items[i]);
+                    if (items[i].quality > 0) {
+                        qualityMinusOne(items[i]);
+                    }
+                    sellInDecreasedBy1(items[i]);
+                } else if (items[i].quality < 1 && !isPassed(i)) {
+                    sellInDecreasedBy1(items[i]);
+                } else if (isPassed(i) && items[i].quality > 0){
+                    qualityMinusOne(items[i]);
+                    if (items[i].quality > 0) {
+                        qualityMinusOne(items[i]);
+                    }
+                    if (items[i].quality > 0) {
+                        qualityMinusOne(items[i]);
+                    }
+                    if (items[i].quality > 0) {
+                        qualityMinusOne(items[i]);
+                    }
+                    sellInDecreasedBy1(items[i]);
+                } else if (items[i].quality < 1 && isPassed(i)) {
+                    sellInDecreasedBy1(items[i]);
+                }
+            }
+
             if (isStandardItem(i)) {
                 if (items[i].quality > 0 && !isPassed(i)) {
                     qualityMinusOne(items[i]);
@@ -36,22 +64,23 @@ class Magasin {
                 }
             }
 
+
             if (isPassVipConcert(i)) {
                 if (!isQualityBelow50(i)) {
                     sellInDecreasedBy1(items[i]);
                 } else if (items[i].sellIn > 10 && isQualityBelow50(i)) {
-                   qualityPlusOne(items[i]);
-                   sellInDecreasedBy1(items[i]);
+                    qualityPlusOne(items[i]);
+                    sellInDecreasedBy1(items[i]);
                 } else if (isVipPassQualityToBeIncreasedBy2(i) && isQualityBelow50(i)) {
-                   qualityPlus2(items[i]);
-                   sellInDecreasedBy1(items[i]);
-               } else if (isVipPassQualityToBeIncreasedBy3(i) && isQualityBelow50(i)) {
-                   qualityPlus3(items[i]);
-                   sellInDecreasedBy1(items[i]);
-               } else if (isPassed(i)) {
-                   items[i].quality = 0;
-                   sellInDecreasedBy1(items[i]);
-               }
+                    qualityPlus2(items[i]);
+                    sellInDecreasedBy1(items[i]);
+                } else if (isVipPassQualityToBeIncreasedBy3(i) && isQualityBelow50(i)) {
+                    qualityPlus3(items[i]);
+                    sellInDecreasedBy1(items[i]);
+                } else if (isPassed(i)) {
+                    items[i].quality = 0;
+                    sellInDecreasedBy1(items[i]);
+                }
             }
 
         }
@@ -102,6 +131,10 @@ class Magasin {
         item.quality = item.quality - 2;
     }
 
+    private boolean isPouvoirMagique(int i) {
+        return items[i].name.equals("Pouvoirs magiques");
+    }
+
     private boolean isVipPassQualityToBeIncreasedBy2(int i) {
         return items[i].sellIn < 11 && items[i].sellIn > 5;
     }
@@ -111,7 +144,7 @@ class Magasin {
     }
 
     private boolean isStandardItem(int i) {
-        return !isComte(i) && !isPassVipConcert(i) && !isKryptonite(i);
+        return !isComte(i) && !isPassVipConcert(i) && !isKryptonite(i) && !isPouvoirMagique(i);
     }
 
 }
