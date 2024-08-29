@@ -1,0 +1,24 @@
+Standard Item,10,20,Standard Item,9,19
+Standard Item,0,10,Standard Item,-1,8
+Standard Item,-1,10,Standard Item,-2,8
+Standard Item,5,0,Standard Item,4,0
+Standard Item,5,1,Standard Item,4,0
+Standard Item,5,50,Standard Item,4,49
+Comte,0,20,Comte,9,21
+Comte,0,20,Comte,-1,21
+Comte,-1,20,Comte,-2,21
+Comte,5,50,Comte,4,50
+Comte,5,49,Comte,4,50
+Pass VIP Concert,15,20,Pass VIP Concert,14,21
+Pass VIP Concert,10,20,Pass VIP Concert,9,22
+Pass VIP Concert,5,20,Pass VIP Concert,4,23
+Pass VIP Concert,1,20,Pass VIP Concert,0,23
+Pass VIP Concert,0,20,Pass VIP Concert,-1,0
+Pass VIP Concert,-1,20,Pass VIP Concert,-2,0
+Pass VIP Concert,5,50,Pass VIP Concert,4,50
+Kryptonite,5,80,Kryptonite,5,80
+Kryptonite,-1,80,Kryptonite,-1,80
+Kryptonite,0,80,Kryptonite,0,80
+Standard Item,0,0,Standard Item,-1,0
+Comte,0,50,Comte,-1,50
+Pass VIP Concert,0,0,Pass VIP Concert,-1,0
