@@ -197,9 +197,9 @@ class MagasinTest {
 
     @ParameterizedTest
     @CsvSource({
-            "Pouvoirs magiques, 8, 10, 7, 8", //SellIn -1 , quality -2
-            "Pouvoirs magiques, 0, 10, -1, 6", //SellIn -1 , quality -4
-            "Pouvoirs magiques, 0, 2, -1, 0", //SellIn -1 , quality ne peut pas être négative
+            "Pouvoirs magiques, 8, 10, 7, 8", //quality FAILED - RESOLU !
+            "Pouvoirs magiques, 0, 10, -1, 6", //quality FAILED
+            "Pouvoirs magiques, 0, 2, -1, 0", //-4 mais quality pas négatif
     })
 
     void testPouvoirsMagique(String name, int initialSellIn, int initialQuality, int expectedSellIn, int expectedQuality) {
