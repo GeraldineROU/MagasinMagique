@@ -55,22 +55,22 @@ class MagasinTest {
     //////////// Test paramétrés : permet en une seule fonction de vérifier plusieurs cas /////////////
 
 
-//    @ParameterizedTest
-//    @CsvFileSource(files = "src/test/resources/items.csv")
-//    void csvSourcedTest(String name, Integer sellIn, Integer quality, String expectedName, Integer expectedSellIn, Integer expectedQuality) {
-//
-//        ////initialisation du test
-//        Item[] items = new Item[] {new Item(name, sellIn, quality)};
-//        Magasin shop = new Magasin(items);
-//
-//        ////execution de la fonction à tester
-//        shop.updateQuality();
-//
-//        ////verification
-//        assertEquals(expectedName, shop.items[0].name);
-//        assertEquals(expectedSellIn, shop.items[0].sellIn);
-//        assertEquals(expectedQuality, shop.items[0].quality);
-//    }
+    @ParameterizedTest
+    @CsvFileSource(files = "src/test/resources/items.csv")
+    void csvSourcedTest(String name, Integer sellIn, Integer quality, String expectedName, Integer expectedSellIn, Integer expectedQuality) {
+
+        ////initialisation du test
+        Item[] items = new Item[] {new Item(name, sellIn, quality)};
+        Magasin shop = new Magasin(items);
+
+        ////execution de la fonction à tester
+        shop.updateQuality();
+
+        ////verification
+        assertEquals(expectedName, shop.items[0].name);
+        assertEquals(expectedSellIn, shop.items[0].sellIn);
+        assertEquals(expectedQuality, shop.items[0].quality);
+    }
 
     @ParameterizedTest
     @CsvSource({
